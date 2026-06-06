@@ -1,0 +1,19 @@
+CREATE DATABASE complaint_db;
+USE complaint_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(100)
+);
+
+CREATE TABLE complaints (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    description TEXT,
+    user_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO users(username,password)
+VALUES('admin','1234');
